@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.1)  7 JUN 2015 08:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.1)  7 JUN 2015 11:42
 entering extended mode
 **coagulation.tex
 ("C:\Users\Francesco\Documents\BMC version-12-02-2013\coagulation.tex"
@@ -197,6 +197,14 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 ))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
 ("C:\Users\Francesco\Documents\BMC version-12-02-2013\algorithm2e.sty"
 Package: algorithm2e 2008/00/00 v3.10 algorithms environments
 \c@AlgoLine=\count102
@@ -526,18 +534,18 @@ Now handling font encoding U ...
 LaTeX Warning: Label `sec:uq' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
  (C:\Users\Francesco\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
@@ -552,21 +560,21 @@ LaTeX Font Info:    ... okay on input line 97.
 \makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks23
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 155.
+LaTeX Font Info:    Try loading font information for U+msa on input line 156.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 155.
+LaTeX Font Info:    Try loading font information for U+msb on input line 156.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 155.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 156.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (9.99998pt too wide) in paragraph at lines 155--155
+Overfull \hbox (9.99998pt too wide) in paragraph at lines 156--156
 []  
  []
 
@@ -652,15 +660,12 @@ Package epstopdf Info: Source file: <figures/Dia.eps>
 (epstopdf)                    date: 2013-05-23 17:52:28
 (epstopdf)                    size: 240500 bytes
 (epstopdf)             Output file: <figures/Dia-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:27
+(epstopdf)                    size: 41413 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/Dia-eps-converted-t
 o.pdf figures/Dia.eps>
 (epstopdf)             \includegraphics on input line 6.
-runsystem(epstopdf --outfile=figures/Dia-eps-converted-to.pdf figures/Dia.eps).
-..executed (allowed).
-
-Package epstopdf Info: Result file: <figures/Dia-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:27
-(epstopdf)                    size: 41413 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/Dia-eps-converted-to.pdf, id=132, 957.5775pt x 471.7625pt>
 File: figures/Dia-eps-converted-to.pdf Graphic file (type pdf)
@@ -673,15 +678,12 @@ Package epstopdf Info: Source file: <figures/NSA.eps>
 (epstopdf)                    date: 2012-06-23 21:18:06
 (epstopdf)                    size: 55427 bytes
 (epstopdf)             Output file: <figures/NSA-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:28
+(epstopdf)                    size: 56987 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/NSA-eps-converted-t
 o.pdf figures/NSA.eps>
 (epstopdf)             \includegraphics on input line 16.
-runsystem(epstopdf --outfile=figures/NSA-eps-converted-to.pdf figures/NSA.eps).
-..executed (allowed).
-
-Package epstopdf Info: Result file: <figures/NSA-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:28
-(epstopdf)                    size: 56987 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/NSA-eps-converted-to.pdf, id=133, 847.165pt x 431.6125pt>
 File: figures/NSA-eps-converted-to.pdf Graphic file (type pdf)
@@ -697,15 +699,12 @@ Package epstopdf Info: Source file: <figures/mean1.eps>
 (epstopdf)                    date: 2012-01-18 01:34:08
 (epstopdf)                    size: 16401 bytes
 (epstopdf)             Output file: <figures/mean1-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:29
+(epstopdf)                    size: 4997 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/mean1-eps-converted
 -to.pdf figures/mean1.eps>
 (epstopdf)             \includegraphics on input line 38.
-runsystem(epstopdf --outfile=figures/mean1-eps-converted-to.pdf figures/mean1.e
-ps)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/mean1-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:29
-(epstopdf)                    size: 4997 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/mean1-eps-converted-to.pdf, id=146, 963.6pt x 524.96124pt>
 File: figures/mean1-eps-converted-to.pdf Graphic file (type pdf)
@@ -718,15 +717,12 @@ Package epstopdf Info: Source file: <figures/std.eps>
 (epstopdf)                    date: 2012-01-18 01:41:02
 (epstopdf)                    size: 12060 bytes
 (epstopdf)             Output file: <figures/std-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:30
+(epstopdf)                    size: 4239 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/std-eps-converted-t
 o.pdf figures/std.eps>
 (epstopdf)             \includegraphics on input line 48.
-runsystem(epstopdf --outfile=figures/std-eps-converted-to.pdf figures/std.eps).
-..executed (allowed).
-
-Package epstopdf Info: Result file: <figures/std-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:30
-(epstopdf)                    size: 4239 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/std-eps-converted-to.pdf, id=147, 963.6pt x 524.96124pt>
 File: figures/std-eps-converted-to.pdf Graphic file (type pdf)
@@ -739,15 +735,12 @@ Package epstopdf Info: Source file: <figures/nsarb33.eps>
 (epstopdf)                    date: 2012-06-23 22:21:26
 (epstopdf)                    size: 82811 bytes
 (epstopdf)             Output file: <figures/nsarb33-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:30
+(epstopdf)                    size: 66995 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/nsarb33-eps-convert
 ed-to.pdf figures/nsarb33.eps>
 (epstopdf)             \includegraphics on input line 64.
-runsystem(epstopdf --outfile=figures/nsarb33-eps-converted-to.pdf figures/nsarb
-33.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/nsarb33-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:30
-(epstopdf)                    size: 66995 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/nsarb33-eps-converted-to.pdf, id=148, 926.46124pt x 427.5975pt>
 File: figures/nsarb33-eps-converted-to.pdf Graphic file (type pdf)
@@ -760,15 +753,12 @@ Package epstopdf Info: Source file: <figures/nsaic.eps>
 (epstopdf)                    date: 2012-06-23 22:36:46
 (epstopdf)                    size: 26233 bytes
 (epstopdf)             Output file: <figures/nsaic-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:31
+(epstopdf)                    size: 17018 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/nsaic-eps-converted
 -to.pdf figures/nsaic.eps>
 (epstopdf)             \includegraphics on input line 73.
-runsystem(epstopdf --outfile=figures/nsaic-eps-converted-to.pdf figures/nsaic.e
-ps)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/nsaic-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:31
-(epstopdf)                    size: 17018 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/nsaic-eps-converted-to.pdf, id=149, 810.02625pt x 494.84875pt>
 File: figures/nsaic-eps-converted-to.pdf Graphic file (type pdf)
@@ -781,15 +771,12 @@ Package epstopdf Info: Source file: <figures/comp.eps>
 (epstopdf)                    date: 2012-02-27 17:35:00
 (epstopdf)                    size: 112269 bytes
 (epstopdf)             Output file: <figures/comp-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:32
+(epstopdf)                    size: 33373 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/comp-eps-converted-
 to.pdf figures/comp.eps>
 (epstopdf)             \includegraphics on input line 89.
-runsystem(epstopdf --outfile=figures/comp-eps-converted-to.pdf figures/comp.eps
-)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/comp-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:32
-(epstopdf)                    size: 33373 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/comp-eps-converted-to.pdf, id=150, 1155.31625pt x 852.18375pt>
 File: figures/comp-eps-converted-to.pdf Graphic file (type pdf)
@@ -802,15 +789,12 @@ Package epstopdf Info: Source file: <figures/steady.eps>
 (epstopdf)                    date: 2012-01-13 00:34:44
 (epstopdf)                    size: 10190 bytes
 (epstopdf)             Output file: <figures/steady-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:33
+(epstopdf)                    size: 4244 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/steady-eps-converte
 d-to.pdf figures/steady.eps>
 (epstopdf)             \includegraphics on input line 97.
-runsystem(epstopdf --outfile=figures/steady-eps-converted-to.pdf figures/steady
-.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/steady-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:33
-(epstopdf)                    size: 4244 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/steady-eps-converted-to.pdf, id=151, 963.6pt x 506.89375pt>
 File: figures/steady-eps-converted-to.pdf Graphic file (type pdf)
@@ -823,15 +807,12 @@ Package epstopdf Info: Source file: <figures/mean.eps>
 (epstopdf)                    date: 2012-01-24 02:43:58
 (epstopdf)                    size: 39699 bytes
 (epstopdf)             Output file: <figures/mean-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:33
+(epstopdf)                    size: 13780 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/mean-eps-converted-
 to.pdf figures/mean.eps>
 (epstopdf)             \includegraphics on input line 108.
-runsystem(epstopdf --outfile=figures/mean-eps-converted-to.pdf figures/mean.eps
-)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/mean-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:33
-(epstopdf)                    size: 13780 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/mean-eps-converted-to.pdf, id=152, 963.6pt x 524.96124pt>
 File: figures/mean-eps-converted-to.pdf Graphic file (type pdf)
@@ -844,15 +825,12 @@ Package epstopdf Info: Source file: <figures/F89.eps>
 (epstopdf)                    date: 2012-12-11 02:59:36
 (epstopdf)                    size: 12707702 bytes
 (epstopdf)             Output file: <figures/F89-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:42
+(epstopdf)                    size: 32493 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/F89-eps-converted-t
 o.pdf figures/F89.eps>
 (epstopdf)             \includegraphics on input line 114.
-runsystem(epstopdf --outfile=figures/F89-eps-converted-to.pdf figures/F89.eps).
-..executed (allowed).
-
-Package epstopdf Info: Result file: <figures/F89-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:42
-(epstopdf)                    size: 32493 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/F89-eps-converted-to.pdf, id=153, 868.24374pt x 471.7625pt>
 File: figures/F89-eps-converted-to.pdf Graphic file (type pdf)
@@ -865,15 +843,12 @@ Package epstopdf Info: Source file: <figures/F89hist.eps>
 (epstopdf)                    date: 2012-12-11 02:53:16
 (epstopdf)                    size: 45757 bytes
 (epstopdf)             Output file: <figures/F89hist-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:42
+(epstopdf)                    size: 6765 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/F89hist-eps-convert
 ed-to.pdf figures/F89hist.eps>
 (epstopdf)             \includegraphics on input line 131.
-runsystem(epstopdf --outfile=figures/F89hist-eps-converted-to.pdf figures/F89hi
-st.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/F89hist-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:42
-(epstopdf)                    size: 6765 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/F89hist-eps-converted-to.pdf, id=154, 892.33376pt x 527.9725pt>
 File: figures/F89hist-eps-converted-to.pdf Graphic file (type pdf)
@@ -886,15 +861,12 @@ Package epstopdf Info: Source file: <figures/rv.eps>
 (epstopdf)                    date: 2012-04-20 14:06:00
 (epstopdf)                    size: 18125 bytes
 (epstopdf)             Output file: <figures/rv-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:43
+(epstopdf)                    size: 4896 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/rv-eps-converted-to
 .pdf figures/rv.eps>
 (epstopdf)             \includegraphics on input line 136.
-runsystem(epstopdf --outfile=figures/rv-eps-converted-to.pdf figures/rv.eps)...
-executed (allowed).
-
-Package epstopdf Info: Result file: <figures/rv-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:43
-(epstopdf)                    size: 4896 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/rv-eps-converted-to.pdf, id=155, 1155.31625pt x 852.18375pt>
 File: figures/rv-eps-converted-to.pdf Graphic file (type pdf)
@@ -919,15 +891,12 @@ Package epstopdf Info: Source file: <figures/F89m.eps>
 (epstopdf)                    date: 2012-12-11 03:08:48
 (epstopdf)                    size: 13155306 bytes
 (epstopdf)             Output file: <figures/F89m-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:52
+(epstopdf)                    size: 60689 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/F89m-eps-converted-
 to.pdf figures/F89m.eps>
 (epstopdf)             \includegraphics on input line 150.
-runsystem(epstopdf --outfile=figures/F89m-eps-converted-to.pdf figures/F89m.eps
-)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/F89m-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:52
-(epstopdf)                    size: 60689 bytes.
+Package epstopdf Info: Output file is already uptodate.
 <figures/F89m-eps-converted-to.pdf, id=225, 868.24374pt x 484.81125pt>
 File: figures/F89m-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -939,15 +908,12 @@ Package epstopdf Info: Source file: <figures/F89mhist.eps>
 (epstopdf)                    date: 2012-12-11 03:05:38
 (epstopdf)                    size: 46708 bytes
 (epstopdf)             Output file: <figures/F89mhist-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:52
+(epstopdf)                    size: 6795 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/F89mhist-eps-conver
 ted-to.pdf figures/F89mhist.eps>
 (epstopdf)             \includegraphics on input line 157.
-runsystem(epstopdf --outfile=figures/F89mhist-eps-converted-to.pdf figures/F89m
-hist.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/F89mhist-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:52
-(epstopdf)                    size: 6795 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/F89mhist-eps-converted-to.pdf, id=226, 892.33376pt x 527.9725pt>
 File: figures/F89mhist-eps-converted-to.pdf Graphic file (type pdf)
@@ -960,15 +926,12 @@ Package epstopdf Info: Source file: <figures/NSAD.eps>
 (epstopdf)                    date: 2012-06-23 21:11:00
 (epstopdf)                    size: 32154 bytes
 (epstopdf)             Output file: <figures/NSAD-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-06-07 08:59:53
+(epstopdf)                    size: 14616 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/NSAD-eps-converted-
 to.pdf figures/NSAD.eps>
 (epstopdf)             \includegraphics on input line 168.
-runsystem(epstopdf --outfile=figures/NSAD-eps-converted-to.pdf figures/NSAD.eps
-)...executed (allowed).
-
-Package epstopdf Info: Result file: <figures/NSAD-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-06-07 08:59:53
-(epstopdf)                    size: 14616 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figures/NSAD-eps-converted-to.pdf, id=227, 847.165pt x 446.66875pt>
 File: figures/NSAD-eps-converted-to.pdf Graphic file (type pdf)
@@ -999,13 +962,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4369 strings out of 493921
- 60193 string characters out of 3144865
- 167429 words of memory out of 3000000
- 7504 multiletter control sequences out of 15000+200000
+ 4413 strings out of 493921
+ 60901 string characters out of 3144865
+ 168280 words of memory out of 3000000
+ 7543 multiletter control sequences out of 15000+200000
  16595 words of font info for 66 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 42i,20n,26p,933b,433s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,20n,26p,933b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:
@@ -1032,7 +995,7 @@ amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/symbols/msbm7.pfb>
-Output written on coagulation.pdf (48 pages, 751728 bytes).
+Output written on coagulation.pdf (48 pages, 752944 bytes).
 PDF statistics:
  364 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -41,11 +41,11 @@ blood coagulation model, we found $88$ equilibrium (steady state
 solutions) for Hockin-Mann's model based on initial conditions from
 \cite{HocJon02}, and that all equilibriums are determined by linear
 and quadratic equations shown in Table \ref{steady}. In particular,
-Thrombin IIa ( $x_{13}$) and meizothrombin mIIa ($x_{16}$) are free
+Thrombin IIa ($x_{13}$;\textcolor{red}{$x_{7}$ or IXa}) and meizothrombin mIIa ($x_{16}$;\textcolor{red}{$x_{25}$ or VIIIa}) are free
 variables, and linearly depend on the initial condition (linear
 equations), reaction rates, and values of other species such as
-TF=VIIa=X ($x_{17}$), TF=VIIa=Xa ($x_{19}$) as well as Xa=TFPI
-($x_{20}$) (quadratic equations). Moreover, the constants shown in
+TF=VIIa=X ($x_{17}$;\textcolor{red}{$x_{9}$ or IXa=VIIIa}), TF=VIIa=Xa ($x_{19}$;\textcolor{red}{$x_{10}$ or VIII$a_1\cdot$L}) as well as Xa=TFPI
+($x_{20}$;\textcolor{red}{$x_{27}$ or VIII$a_2$}) (quadratic equations). Moreover, the constants shown in
 linear equations, such as $3.3383\times10^{-9}$ and
 $2.33\times10^{-10}$, are determined by initial conditions.
 Quadratic equations account for effects of reaction rates $k_i$.
@@ -88,7 +88,7 @@ is ``close" to results obtained by solving Hockin-Mann's model
 steady state solution is obtained by the following manner: combining
 with the time marching result from \cite{HocJon02}, the free
 variables in Table \ref{steady} are set to zero except the thrombin
-($x_{13}$), meizothrombin ($x_{16}$) and TF=VIIa=X ($x_{17}$). Thus,
+($x_{13}$;\textcolor{red}{$x_{7}$ or IXa}), meizothrombin ($x_{16}$;\textcolor{red}{$x_{25}$ or VIIIa}) and TF=VIIa=X ($x_{17}$;\textcolor{red}{$x_{9}$ or IXa=VIIIa}). Thus,
 a simplified steady state solution is obtained in Table
 \ref{steady2}.
 By solving the polynomial system with respect to variables
@@ -100,7 +100,7 @@ x_{17}=1.03445\times10^{-12}.\] Then $x_{19}$ and $x_{20}$ can be
 obtained by substituting $x_{16}$ and $x_{17}$ into the linear
 equations in Table \ref{steady2}. This solution shows that total
 thrombin concentration is related with the complex TF=VIIa=X
-($x_{17}$). In particular, equation
+($x_{17}$;\textcolor{red}{$x_{9}$ or IXa=VIIIa}). In particular, equation
 $k_{18}x_{17}+k_{25}x_{17}-k_{19}x_{16}x_{13}=0$ reveals the fact
 that TF=VIIa=X links with thrombin and meizothrombin through
 IXa=VIIIa in No. 11 and 15 chemical equations. Moreover, TF=VIIa=X
