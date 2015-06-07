@@ -1,0 +1,87 @@
+
+\section*{Introduction}
+\label{sec:intro}
+
+
+ It is becoming increasingly vital to combine
+laboratory research with mathematical modeling and computer
+simulation to get additional insight into biological processes
+\cite{AssHer06,Arn06,CNX,HRAMMA,LGWNC,
+LZV,MCNJY,PWSNCM,SJKA1,SJKA2,SCBM,TPMA,WJKA}. %To build a
+%mathematical model that describes a biological process, the
+%biological process is conceptualized by mathematical
+%representations, e.g., differential equations, discrete models and
+%stochastic equations.
+In the process of model development, conceptual model is firstly
+established by making some simplifying
+assumptions. Then, it is implemented mathematically and analyzed using
+theoretical approaches or numerical methods. Meanwhile,
+experiments are used to estimate model parameters
+and to calibrate
+ and validate the model. However, due to errors in experimental
+measurements, there always exists uncertainty in parameter
+estimation. This uncertainty includes model simplifications,
+computational errors coming from numerical schemes, and random local
+rules in Monte carlo simulations. The situation could become even
+worse if certain parameter values may be impossible to measure using
+current experimental techniques, and to test a range of parameter
+values. %Typically, data-fitting is used to estimate these parameters
+%in this scenario.
+Thus, identifying the sensitivity and uncertainty
+of the model parameters becomes essential for using models to make
+predictions and to explore biological hypotheses.
+
+
+Recently, many methods have been developed for analyzing sensitivity of chemical/biological reaction networks. These include Morris method ~\cite{Morris91}, the sparse grid
+probabilistic collocation method (SGPCM) \cite{DBJSH, LinAMTAWR,
+LinAMTJSC}, pathwise sensitivity analysis methods \cite{PKV13} and many other methods.
+However, many of these methods have difficulty in studying high-dimensional models.
+
+In this paper, we introduce a new general framework for quantifying
+uncertainty, analyzing the parameters, and determining steady states
+of chemical/biological reaction network models in the form of systems of ordinary differential equations (ODEs) (see Fig. \ref{fig:Dia}),
+and demonstrate this
+approach by using it to analyze a specific example, Hockin-Mann's model \cite{HocJon02} of blood coagulation. 
+
+Using this framework, we first
+compute the steady state solution structures and characteristics of
+a ODE model using a newly developed numerical algebraic
+geometry method, which is capable of  finding all steady state solutions
+ for arbitrary initial conditions. The steady state solutions are known to be dependent on
+the initial conditions and reaction rates. We demonstrate that our new algorithm
+is able to compute all steady states of models
+ represented by a singular sparse polynomial system, and with a large number of
+variables.
+
+
+We then used two stochastic  sensitivity analysis tools, namely, Morris method ~\cite{Morris91} based on Monte
+Carlo (MC) simulation and sparse grid collocation based on SGPCM
+approach, to rank the importance of the reaction rate constants of the model.
+We show that the results obtained by these two methods are consistent.
+However, the SGPCM has higher order of convergence than
+the  Morris method, which is a classical method on sensitivity analysis, and
+depends on MC method. In addition, the SGPCM can also provide the effects
+between reaction rates and initial concentrations of reactants respectively.
+
+The SGPM is used in the end to quantify uncertainties of the model. We validate the result obtained by the SGPM with the one obtained by Monte Carlo to show that the SGPM can  handle the high-dimensional model.
+
+
+We  examine the effectiveness of this computational framework by applying it to analyze a blood coagulation model,  Hockin-Mann's model \cite{HocJon02}.  This model simulates blood coagulation
+reactions, one of the key processes controlling blood clot (or
+thrombus) formation. And proper blood clotting (or hemostasis) is critical to
+preventing hemorrhaging. Particularly, we explored the solution structures of the model,
+ranked the  sensitivity and quantified the uncertainties of reaction rate constants of the model,  which
+were determined by fitting computational results with empirical
+data.
+
+Most of the therapeutic drugs treating hemophilia would vary one or
+two reaction rates to increase factor thrombin production. Using our sensitivity analysis results, we
+studied the effects of several hemophilia drugs (shown in Table
+\ref{tab:trial}) on the rate of thrombin production. Specifically, we
+predicted the threshold value of concentration of factor VIII (FVIII) in reducing
+the risk of bleeding disorder while keeping other blood coagulation factors at the normal levels of concentration. In this case, we predicted that it is sufficient to
+analysis of the threshold value of factor VIII (FVIII) could provide maintain the
+FVIII concentration to be 4.7\% of its normal level.
+
+
+

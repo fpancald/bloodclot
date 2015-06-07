@@ -1,0 +1,27 @@
+\section*{Figures}
+\begin{figure}[!ht]
+  \begin{center}
+  \includegraphics[width=6in]{mean1.eps}
+\caption{Modified means and standard deviations based sensitivity
+ranking of reaction rates with respect to the total thrombin using
+``Morris one at a time'' method. Horizontal axis shows reaction
+rates. Vertical axis shows modified means and standard deviations
+respectively. This figure indicates  that $k_{14}$ has the largest
+modified mean and standard deviation,  and that $k_{14}$ is the most
+sensitive to variance of total thrombin. } \label{Fig:mmean}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[!ht]
+  \begin{center}
+  \includegraphics[width=6in]{std.eps}
+\caption{Modified Morris diagram on sensitivity ranking of reaction
+rates with respect to the total thrombin. Ranks of sensitivity for
+individual reaction rates are determined by their distance from the
+origin. From this figure, the five most sensitive reaction rates are
+$k_{14}$, $k_{15}$,  $k_{11}$, $k_{9}$ and $k_{37}$. The other
+reaction rates cluster together due to the same magnitude of
+sensitivity. } \label{Fig:std}
+  \end{center}
+\end{figure}

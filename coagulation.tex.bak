@@ -1,0 +1,232 @@
+%% BioMed_Central_Tex_Template_v1.06
+%%                                      %
+%  bmc_article.tex            ver: 1.06 %
+%                                       %
+%%IMPORTANT: do not delete the first line of this template
+%%It must be present to enable the BMC Submission system to
+%%recognise this template!!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                     %%
+%%  LaTeX template for BioMed Central  %%
+%%     journal article submissions     %%
+%%                                     %%
+%%         <14 August 2007>            %%
+%%                                     %%
+%%                                     %%
+%% Uses:                               %%
+%% cite.sty, url.sty, bmc_article.cls  %%
+%% ifthen.sty. multicol.sty        %%
+%%                         %%
+%%                                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\documentclass[10pt]{bmc_article}
+\usepackage{amsmath,amssymb}
+\usepackage{latexsym}            % for the qed symbol
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage[ruled,vlined]{algorithm2e}
+\def \bes{\begin{eqnarray}}
+\def \ees{\end{eqnarray}}
+\def \nnu{\nonumber}
+
+% Load packages
+\usepackage{cite} % Make references as [1-4], not [1,2,3,4]
+\usepackage{url}  % Formatting web addresses
+\usepackage{ifthen}  % Conditional
+\usepackage{multicol}   %Columns
+\usepackage[utf8]{inputenc} %unicode support
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+\urlstyle{rm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                             %%
+%%  If you wish to display your graphics for   %%
+%%  your own use using includegraphic or       %%
+%%  includegraphics, then comment out the      %%
+%%  following two lines of code.               %%
+%%  NB: These line *must* be included when     %%
+%%  submitting to BMC.                         %%
+%%  All figure files must be submitted as      %%
+%%  separate graphics through the BMC          %%
+%%  submission process, not included in the    %%
+%%  submitted article.                         %%
+%%                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\def\includegraphic{}
+
+
+\setlength{\topmargin}{0.0cm}
+\setlength{\textheight}{21.5cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\columnsep}{0.6cm}
+
+\newboolean{publ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                              %%
+%% You may change the following style settings  %%
+%% Should you wish to format your article       %%
+%% in a publication style for printing out and  %%
+%% sharing with colleagues, but ensure that     %%
+%% before submitting to BMC that the style is   %%
+%% returned to the Review style setting.        %%
+%%                                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Review style settings
+%\newenvironment{bmcformat}{\begin{raggedright}\baselineskip20pt\sloppy\setboolean{publ}{false}}{\end{raggedright}\baselineskip20pt\sloppy}
+
+%Publication style settings
+%\newenvironment{bmcformat}{\fussy\setboolean{publ}{true}}{\fussy}
+
+%New style setting
+\newenvironment{bmcformat}{\baselineskip20pt\sloppy\setboolean{publ}{false}}{\baselineskip20pt\sloppy}
+
+% Begin ...
+\begin{document}
+\begin{bmcformat}
+
+
+\title{Role of Fitted Reaction Rates in Predicting
+Thrombin Production}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors here                   %%
+%%                                          %%
+%% Ensure \and is entered between all but   %%
+%% the last two authors. This will be       %%
+%% replaced by a comma in the final article %%
+%%                                          %%
+%% Ensure there are no trailing spaces at   %%
+%% the ends of the lines                    %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\author{Wenrui Hao$^1$%
+         \email{Wenrui Hao - whao@nd.edu}
+       and
+         Guang Lin$^2$%
+         \email{Guang Lin - guang.lin@pnnl.gov}%
+        and
+         Zhiliang Xu$^1$%
+         \email{Zhiliang Xu - zxu2@nd.edu}%
+         and
+         Elliot Rosen$^3$%
+         \email{Elliot Rosen - edrosen@iupui.edu}
+        and
+         Andrew Sommese\correspondingauthor$^1$%
+         \email{Andrew Sommese\correspondingauthor - sommese@nd.edu}%
+        and
+         Mark Alber\correspondingauthor$^{1,4}$%
+         \email{Mark Alber\correspondingauthor - alber@nd.edu}%
+      }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors' addresses here        %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\address{%
+    \iid(1) Department of Applied and Computational Mathematics and
+Statistics, University of Notre Dame, Notre Dame, IN 46556\\
+    \iid(2) Computational Mathematics Group, Pacific Northwest National
+Laboratory, 902 Battelle Boulevard, Richland, WA 99352\\
+    \iid(3) Department of Medical and Molecular Genetics,
+Indiana University School of Medicine\\
+    \iid(4) Department of Medicine, Indiana University School of Medicine
+}%
+
+\maketitle
+\begin{abstract}
+\input{sections/Abstract}
+\end{abstract}
+
+
+
+\ifthenelse{\boolean{publ}}{\begin{multicols}{2}}{}
+
+\input{sections/Introduction}
+\input{sections/Background}
+\input{sections/Results}
+\input{sections/Discussions}
+\input{sections/Methods}
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Author's contributions}
+WH, AS and ZX developed algorithms for steady states; WH, GL and ZX
+performed sensitivity and uncertainty to the model; WH, GL, ZX and
+ER analyze the therapy for bleeding disorder; AS and MA supervised
+the project. All authors read and approved the final manuscript.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+  \ifthenelse{\boolean{publ}}{\small}{}
+%We would like to express our thanks to Prof. Bei Hu whose valuable
+%comments and suggestions helped greatly to improve this article. We
+%thank Dr. Jonathan Hauenstein for many useful discussions.
+We acknowledge supports by the Duncan Chair of the University of
+Notre Dame, NSF grants DMS-0800612, DMS-1115887, CCF-0515203 and
+CCF-0916606, NIH grants HL073750-01A1, 1R01GM100470-01,
+1R01GM095959-01A1,  the INGEN Initiative to Indiana University
+School of Medicine. GL also acknowledges support by the Applied
+Mathematics program of the U.S. DOE Office of Advanced Scientific
+Computing Research. Computations were performed using the
+computational resources of the National Energy Research Scientific
+Computing Center at Lawrence Berkeley National Laboratory and the
+William R. Wiley Environmental Molecular Sciences Laboratory (EMSL).
+EMSL is a DOE national scientific user facility located at PNNL. The
+Pacific Northwest National Laboratory is operated by Battelle for
+the U.S. Department of Energy under Contract DE-AC05-76RL01830.
+% \ldots
+
+\newpage
+%{\ifthenelse{\boolean{publ}}{\footnotesize}{\small}%
+% \bibliographystyle{bmc_article}  % Style BST file
+%  \bibliography{bmc_article} }     % Bibliography file (usually '*.bib' )
+\input{sections/bib}
+%%%%%%%%%%%
+
+\ifthenelse{\boolean{publ}}{\end{multicols}}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               %%
+%% Figures                       %%
+%%                               %%
+%% NB: this is for captions and  %%
+%% Titles. All graphics must be  %%
+%% submitted separately and NOT  %%
+%% included in the Tex document  %%
+%%                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% Do not use \listoffigures as most will included as separate files
+\input{sections/Tables}
+\clearpage
+\input{sections/Figures}
+
+\input{sections/Appendix}
+\clearpage
+\input{sections/AppendixB}
+
+
+\input{sections/AppendixC}
+
+
+\end{bmcformat}
+\end{document}

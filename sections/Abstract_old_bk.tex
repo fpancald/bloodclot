@@ -1,0 +1,47 @@
+{\bf Background:} The blood coagulation system is composed of a
+complex network of chemical reactions. This network can be modeled
+by a Hockin-Mann et al theoretical model.
+\\{\bf Results:}
+We have used a systematic approach to analyze how simulation fitted
+reaction rate constants in the Hockin-Mann model of the extrinsic
+(TF mediated) coagulation pathway affect rates of thrombin
+production. We first present algorithms based on numerical algebraic
+geometry to compute steady state solutions for different initial
+conditions. By applying these algorithms to general rank-deficiency
+systems, steady states which cannot be obtained by the time marching
+method are determined. Stability of these steady state solutions is
+studied using mathematical analysis and numerical simulations. We
+then perform both variance decomposition based on the sensitivity
+analysis and Morris design method to rank the significance of the
+$16$ data-fitted reaction rates with respect to the total thrombin
+production. The sensitivity ranking of the reaction rates show
+agreement between both methods. Subsequently, the sparse grid
+probabilistic collocation method (SGPCM) is employed to quantify how
+uncertainties of these $16$ reaction rates influence total thrombin
+production. Numerical results obtained by SGPCM are consistent with
+the results obtained from the classic Monte Carlo simulations. These
+methods can be applied to analysis of mathematical model with large
+scale parameters. Additionally, the numerical results indicate that
+SGPCM can achieve much faster convergence than classic Monte Carlo
+method with much lower computational cost. Finally, we ranked the
+importance of different reaction rate constants using sensitivity
+analysis to identify critical threshold levels for factors VIII and
+IX for hemophilia therapy.
+\\{\bf Conclusions:} %Our simulations demonstrate that the
+%equilibrium of the blood coagulation network depends upon not only
+%the initial concentrations of factors in the blood, but also values
+%of reaction rate constants.
+We present a general framework for anlayzing reaction network
+represented by system of ordinary differential equations (ODEs). In
+these systems, there exists a large number of parameter sets.
+Especially, in Hockin-Mann model, among these $16$ fitted reaction
+rate constants, the reaction rate $k_{14}$, which is related to
+factor IX, plays most important role in determining the rate of
+thrombin generation. Moreover, the sensitivity analysis provides
+threshold values for individual factors or provided reaction rate
+constants in controlling thrombin production. Identifying the
+threshold concentration of factor VIII provides clinical information
+to direct therapy for hemophilia patients experiencing bleeding
+disorder. In our simulation, we suggest that increasing the value of
+$k_{14}$ and decreasing the concentration of factor X would provide
+a feasible therapy for patients of bleeding disorder.

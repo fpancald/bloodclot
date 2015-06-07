@@ -1,0 +1,132 @@
+
+\section*{Introduction}
+\label{sec:intro}
+
+
+ It is becoming increasingly vital to combine
+laboratory research with mathematical modeling and computer
+simulation to get additional insight into biological processes
+\cite{AssHer06,Arn06,CNX,HRAMMA,LGWNC,
+LZV,MCNJY,PWSNCM,SJKA1,SJKA2,SCBM,TPMA,WJKA}. %To build a
+%mathematical model that describes a biological process, the
+%biological process is conceptualized by mathematical
+%representations, e.g., differential equations, discrete models and
+%stochastic equations.
+In the process of model development, conceptual model is firstly
+established by making some simplifying
+assumptions. Then, it is implemented mathematically and analyzed using
+theoretical approaches or numerical methods. Meanwhile,
+experiments are used to estimate model parameters
+and to calibrate
+ and validate the model. However, due to errors in experimental
+measurements, there always exists uncertainty in parameter
+estimation. This uncertainty includes model simplifications,
+computational errors coming from numerical schemes, and random local
+rules in Monte carlo simulations. The situation could become even
+worse if certain parameter values may be impossible to measure using
+current experimental techniques, and to test a range of parameter
+values. %Typically, data-fitting is used to estimate these parameters
+%in this scenario.
+Thus, identifying the sensitivity and uncertainty
+of the model parameters becomes essential for using models to make
+predictions and to explore biological hypotheses.
+
+
+Recently, many methods have been developed for analyzing sensitivity of chemical/biological reaction networks. These include Morris method ~\cite{Morris91}, the sparse grid
+probabilistic collocation method (SGPCM) \cite{DBJSH, LinAMTAWR,
+LinAMTJSC}, pathwise sensitivity analysis methods \cite{PKV13} and many other methods. 
+However, many of these methods have difficulty in studying high-dimensional models. 
+
+In this paper, we introduce a new general framework for quantifying
+uncertainty, analyzing the parameters, and determining steady states
+of chemical/biological reaction network models (see Fig. \ref{fig:Dia}), 
+and demonstrate this
+approach by using it to analyze a specific example, Hockin-Mann's model. We first
+compute the steady state solution structures and characteristics of
+Hockin-Mann's model \cite{HocJon02} using a newly developed numerical algebraic
+geometry method, which is capable of  finding all steady state solutions
+ for arbitrary initial conditions. The steady state solutions are known to be dependent on
+the initial conditions and reaction rates. We demonstrate that our new algorithm 
+is able to compute all steady states of models 
+ represented by a singular sparse polynomial system, and with a large number of
+variables. 
+
+We then used two stochastic  sensitivity analysis tools, namely, Morris method ~\cite{Morris91} based on Monte
+Carlo (MC) simulation and sparse grid collocation based on SGPCM
+approach, to rank the importance of the reaction rate constants of the model. 
+We show that the results obtained by these two methods are consistent. 
+However, the SGPCM has higher order of convergence than
+the  Morris method, which is a classical method on sensitivity analysis, and
+depends on MC method. In addition, the SGPCM can also provide the effects
+between two reaction rates.  
+
+
+
+ Exploring these solution
+structures and characteristics provides insights into understanding
+the inventory of the proteins and the associated biophysical and
+enzymatic processes involved in blood clotting. Moreover, analysis
+and control of threshold of factor VIII shows that the therapy of
+haemostasis controlling $k_{14}$ and factor X can reduce the risk of
+bleeding disorder.
+
+The Hockin-Mann's model \cite{HocJon02} simulate blood coagulation
+reactions, one of the key processes controlling blood clot (or
+thrombus) formation. Blood clotting (or hemostasis) is critical to
+preventing hemorrhaging. Prior to the Hockin-Mann's model
+\cite{HocJon02}, Mann's group proposed in the form of system of
+ordinary differential equations \cite{JonMan94a,JonMan94b} to
+describe the TF-initiated pathway reactions based on \emph{in vitro}
+experiments. Despite wide applications of Hockin-Mann's model
+\cite{JonMan94a}, structures, characteristics of steady state
+solutions of the model, sensitivity of the model, and uncertainty of
+parameter values have
+yet to be discussed. %In fact, most coagulation models are rarely
+%analyzed.
+ So far,  only Luan \emph{et al.} \cite{LZV}  applied sensitivity analysis to a network of
+coagulation reactions to identify fragile sites. Using parameter
+values from the literature, reactions were identified where small
+changes in parameter values would have dramatic effects on thrombin
+generation and platelet activation. This analysis \cite{LZV}
+ identified reactions involving an interaction of factors IX and VIII
+as the most sensitive reactions to small fluctuations of relevant
+parameters.
+
+There are $16$ reaction rates of the model \cite{HocJon02} which
+were determined by fitting computational results with empirical
+data. Evaluation of uncertainties of these reaction rates has not
+been conducted yet. Moreover, sensitivity of these reaction rates
+has not been studied to the best of our knowledge. However, these
+parameters' study would provide a feasible therapy (involving the
+most important reaction rates), and simplify the mathematical model.
+We next apply sensitivity analysis and uncertainty quantification to
+rank the importance of the reaction rates, and to quantify their
+interactions. Variance of these reaction rates on thrombin
+production and covariance of any pair of these reaction rates on
+thrombin production are decoupled and plotted in Figure
+\ref{fig:NSA1}. Among these fitted rate constants, we identified
+that the reaction rates ($k_{14}$ and $k_{15}$, associated with
+factor IX, shown in Table \ref{taba}) associated with factor IX play
+the most important roles in regulating the rate of thrombin
+production. Specifically at 20\% variation in $k_{14}$ and $k_{15}$
+can increase thrombin production by 200\%.
+
+Most of the therapeutic drugs treating hemophilia would vary one or
+two reaction rates. Using our sensitivity analysis results, we
+studied the effects of several hemophilia drugs (shown in Table
+\ref{tab:trial}) on the rate of thrombin production. Moreover,
+analysis of the threshold value of factor VIII (FVIII) could provide
+useful information to treat hemophilia, and reduce the risk of
+bleeding disorder: using normal levels of all coagulation network
+components (except for FVIII) the threshold FVIII concentration is
+4.7\% of normal levels. We determined the that the reaction rate
+$k_{14}$ and the factor X (FX) concentration have dramatic effects
+on thrombin generation. By increasing the value of $k_{14}$ and the
+concentration of FX, the threshold concentration of FVIII is reduced
+to 3.3 of normal. This technique could be valuable in identifying
+hemophilia carriers who are at risk of bleeding. FVIII levels in
+hemophilia carriers can very widely from 10 - 90\% of normal values.
+By determining the level of other factors and rate constants, one
+can identify whether an individual carrier has FVIII levels near
+their critical threshold and thus may be at risk of uncontrolled
+bleeding.

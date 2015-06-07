@@ -1,0 +1,36 @@
+{\bf Background:} The blood coagulation system is composed of a
+complex network of chemical reactions. This network can be modeled
+by the Hockin-Mann et al theoretical model.
+\\{\bf Results:}
+
+We have developed a systematic approach to analyzing high-dimensional stoichiometric
+biological-reaction network models represented by systems of ordinary differential equations (ODEs) with parameters obtained by data-fitting.
+In this approach, A new algorithm based on numerical algebraic
+geometry  is introduced to compute steady state solutions to rank-deficient
+systems with different initial
+conditions. % In general, steady states to rank-deficient systems cannot be obtained by the time marching method.
+Then the variance decomposition based on the sensitivity
+analysis and Morris design method is used to rank the significance of the reaction rate constants obtained by data-fitting on affecting outputs of the models.
+Subsequently, the sparse grid
+probabilistic collocation method (SGPCM) is employed to quantify how
+uncertainties of these reaction rates influence the model outputs.
+\\{\bf Conclusions:} %Our simulations demonstrate that the
+%equilibrium of the blood coagulation network depends upon not only
+%the initial concentrations of factors in the blood, but also values
+%of reaction rate constants.
+We present a general framework for analyzing high-dimensional
+biological reaction network models represented by system of ODEs with a large number of parameter sets.
+We also show that that SGPCM can achieve much faster convergence than classic Monte Carlo
+method with much lower computational cost.
+
+Specifically, we systematically analyzed the Hockin-Mann model of the extrinsic
+(TF mediated) coagulation pathway model using this framework.
+We ranked the significance of the $16$ data-fitted reaction rates of the model on affecting the total thrombin production and found that the reaction rate $k_{14}$, which is related to
+factor IX, plays the  most important role in determining the thrombin generation.
+Finally, we ranked the
+importance of all reaction rate constants using sensitivity
+analysis to identify critical threshold levels for factors VIII and
+IX to  suggest how to alter either concentrations of these factors or
+ reaction rates associated with them for hemophilia therapies targeting these
+ factors. Using simulations, we suggest that increasing the value of
+$k_{14}$ or decreasing the concentration of factor X would be feasible for hemophilia patients with bleeding disorder.

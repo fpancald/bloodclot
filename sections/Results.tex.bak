@@ -1,0 +1,441 @@
+\section*{Results}
+\label{sec:results}
+
+\subsection*{Mathematical and computational framework for analyzing biological reaction networks}
+We present a general approach to compute the steady states and
+analyze importance of parameters, and provide diagram of different
+stages in the process in Figure \ref{fig:Dia} and Box 1. 
+We demonstrate this general approach by analyzing Hockin-Mann's model.
+
+
+\begin{algorithm}[H]
+\SetAlgoLined
+ \SetAlgorithmName{Algorithm}{problem}{List of problems}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output} %\LinesNumbered
+{\bf Box 1} Computing
+steady states and analyzing the effects of parameters for a general reaction network model.
+\begin{itemize}
+\item[1] numerical algebraic geometry
+(NAG) introduces a novel paradigm of computing steady states.
+Especially, we present a new algorithm for the rank-deficient
+polynomial system which is derived from the reaction network model;
+\item[2] uncertainty quantification (UQ) and sensitivity analysis (SA)
+estimate and identify parameters in the mathematical model. In
+particular, we employ SGPCM, Morris method to analyze the effects of
+parameters;
+\item[3] Adjusting the most sensitive parameters and comparing with the existence
+therapy provide  threshold values of sensitive parameters for a given
+disease.
+\end{itemize}
+\end{algorithm}
+% Using simulations, we are able to validate and
+%calibrate the mathematical model, and make predictions for
+%biological applications. We use this approach to solve Hockin-Mann's
+%model, and then provide an example to demonstrate general approach,
+%and show outcome and benefits in specific biomedical application.
+\subsection*{Analysis of steady state solutions}
+\label{sec:res}
+
+Using \textbf{Algorithm 2} described in \textbf{Methods} to solve the steady state system of the
+blood coagulation model, we found $88$ equilibrium (steady state
+solutions) for Hockin-Mann's model based on initial conditions from
+\cite{HocJon02}, and that all equilibriums are determined by linear
+and quadratic equations shown in Table \ref{steady}. In particular,
+Thrombin IIa ( $x_{13}$) and meizothrombin mIIa ($x_{16}$) are free
+variables, and linearly depend on the initial condition (linear
+equations), reaction rates, and values of other species such as
+TF=VIIa=X ($x_{17}$), TF=VIIa=Xa ($x_{19}$) as well as Xa=TFPI
+($x_{20}$) (quadratic equations). Moreover, the constants shown in
+linear equations, such as $3.3383\times10^{-9}$ and
+$2.33\times10^{-10}$, are determined by initial conditions.
+Quadratic equations account for effects of reaction rates $k_i$.
+
+Next, linear stability analysis is used to explore the steady state
+solution and study the matrix eigenvalue problems of the linearized
+system. Moreover, the nonlinear stability analysis is applied to a
+simplified steady state solution.
+
+\subsubsection*{Linear stability}
+We consider the local stability of steady state solutions. Assuming
+that $x_i=x_i^s+\epsilon x_i^1+O(\epsilon^2)$ for $ i =
+1,\cdots,34$, where $x_i^s$ is the $i$-th component of steady state
+solutions we obtained using the method described in section {\bf
+Methods}, and $x_i^1$ is the first order term by Taylor expansion at
+the steady states. By substituting $x_i$ into Eq. (\ref{1}) in
+Appendix B, and dropping $O(\epsilon^2)$ and higher order terms, the
+linearized system is obtained and shown in Appendix D. The
+linearized system can be written as
+\[\frac{d\mathbf{x}^1}{dt}~=~A(\mathbf{x}^s)\mathbf{x}^1,\]
+which implies that $\mathbf{x}^1=e^{A(\mathbf{x}^s)t}$. If all the
+eigenvalues of $A(\mathbf{x}^s)$ are non-positive, the steady state
+solution $\mathbf{x}^s$ is stable. Since the matrix
+$A(\mathbf{x}^s)$ linearly depends on $\mathbf{x}^s$, we obtain the
+following formula
+\[A(\mathbf{x}^s)~=~\sum_{i=1}^{34} A_i x^s_i,\]
+where $A_i$ is a real matrix and independent on $x^s_i$.
+
+All of the maximum eigenvalues of $A_i$ are negative and are shown in
+Table~\ref{eig}. Therefore all eigenvalues of $A(\mathbf{x}^s)$ are
+also negative for any $\mathbf{x}^s$ with positive components. Thus,
+ the linearized system corresponding to any steady state solution is
+stable. Then, we switch our attention to check the nonlinear
+stability of solutions shown in Table \ref{steady}.
+
+\subsubsection*{Nonlinear stability}
+Among these $88$ steady states, we analyze one steady state, which
+is ``close" to results obtained by solving Hockin-Mann's model
+\cite{HocJon02} using the time marching method. And rest of steady states can be analyzed in a similar way. Specifically, this
+steady state solution is obtained by the following manner: combining
+with the time marching result from \cite{HocJon02}, the free
+variables in Table \ref{steady} are set to zero except the thrombin
+($x_{13}$), meizothrombin ($x_{16}$) and TF=VIIa=X ($x_{17}$). Thus,
+a simplified steady state solution is obtained in Table
+\ref{steady2}. 
+By solving the polynomial system with respect to variables
+$x_{13},x_{16}$ and $x_{17}$ with Bertini \cite{Bertini}, we get one
+real positive solution as follows
+\[
+x_{13}=2.99990\times10^{-8},x_{16}=2.32829\times10^{-14},
+x_{17}=1.03445\times10^{-12}.\] Then $x_{19}$ and $x_{20}$ can be
+obtained by substituting $x_{16}$ and $x_{17}$ into the linear
+equations in Table \ref{steady2}. This solution shows that total
+thrombin concentration is related with the complex TF=VIIa=X
+($x_{17}$). In particular, equation
+$k_{18}x_{17}+k_{25}x_{17}-k_{19}x_{16}x_{13}=0$ reveals the fact
+that TF=VIIa=X links with thrombin and meizothrombin through
+IXa=VIIIa in No. 11 and 15 chemical equations. Moreover, TF=VIIa=X
+also affects the amount of TF=VIIa=Xa ($x_{19}$) and Xa=TFPI
+($x_{20}$) together with meizothrombin (linear equations).  We note that the difference between the solution computed by the
+time marching method and the steady state solution that we choose to
+analyze is smaller than  $10^{-7}$ in $L_1$ norm. Relative
+differences of the nonzero components are shown in  Table \ref{RE}.
+
+Nonlinear stability analysis is accomplished by the following steps:
+applying random perturbations (a sequence $\epsilon_n$ in Table
+~\ref{sta}) to the steady state solution gives initial conditions
+for the initial value problem shown in Appendix B; Runge-Kutta
+method is used to solve this initial value problem numerically. The
+results, summarized in Table~\ref{sta}, demonstrate that the steady
+state solution is non-asymptotically stable. In this case, the
+system moves away in a small region from the steady state solution
+after introducing small disturbances. Therefore, this chemical
+reaction network depends sensitively on the initial condition and
+the reaction rates.
+
+\subsubsection*{Steady states for different initial
+conditions} \label{sec:sa}
+
+Since initial conditions determine linear equations by generating an
+augmented system and play an important roll in computing steady
+states, we consider different initial conditions from \cite{KF01},
+which respond in a threshold manner to changes in the availability
+of particular surface binding sites for enzymes and
+zymogens. %An increase in TF binding sites, as would occur with
+%vascular injury, changes the system's production of thrombin
+%dramatically.
+Using the {\bf
+Algorithm 2}, %in section \ref{sec:steady}
+ we obtained
+steady state solutions and show them in Table \ref{steady21}. The
+free variables in Table \ref{steady21} are set to zero, and then a
+specified steady state solution is obtained in Table \ref{steady22}.
+By solving the polynomial system in Table \ref{steady22}, we get two
+positive real solutions as follows: \bes &\
+&x_{13}=4.99656\times10^{-7},x_{16}=4.12563\times10^{-13},
+x_{17}=3.43569\times10^{-10};\label{solution1}\\ &\
+&x_{13}=4.46036\times10^{-7},x_{16}=7.25906\times10^{-11},
+x_{17}=5.39634\times10^{-8}.\label{solution2}
+ \ees
+ In these two steady state solutions, (\ref{solution1}) can be
+ obtained by a time marching method based on the given initial conditions, while (\ref{solution2}) can not
+ be obtained by the time marching approach.
+ However, (\ref{solution2}) is also stable since it can come back to itself by
+giving small perturbation to (\ref{solution2}) by time-marching. In
+many biological systems, there exists multiple equilibriums even for
+a given initial condition. Moreover, a small perturbation to an
+equilibrium can approach the equilibrium by time-marching indicates
+ that the equilibrium is stable. Therefore, our method is
+ competitive to find multiple steady state solutions.
+
+Comparing Tables \ref{steady2} and \ref{steady22}, polynomial
+equations have different coefficients. Therefore, these steady state
+solutions show a very sharp transition in predicting thrombin
+production as the initial conditions vary. Changes of these initial
+conditions induce an increase of thrombin concentration ($x_{13}$)
+by $10$ times. Moreover, meizothrombin concentration ($x_{16}$) is
+also increased by $10$ or even $1000$ times. Our results are
+consistent with that of \cite{KF01} and \cite{LoDen05}. In fact,
+initial TF density is known to change the total thrombin
+significantly when a vessel is injured. A threshold dependence on TF
+concentration is found in the experiments by Veer and Mann
+\cite{VM}. Additionally, numerical study for low TF density was
+carried out in \cite{LoDen05} by using Kinetic Monte Carlo
+simulation. However, the steady state solutions depends not only on
+initial condition, but also on reaction rates. It is obvious that
+the quadratic equation is related with rate constants $k_i$.
+Understanding how variation of reaction rates affects steady or
+dynamic solutions is difficult to discern using linear or nonlinear
+stability analysis. We therefore perform sensitivity analysis and
+uncertainty
+quantification to the system and show their effects. %in Section
+%\ref{sec:uq}.
+
+\subsection*{Sensitivity analysis and uncertainty quantification of
+reaction rates and initial conditions and their impacts on steady
+state solutions} \label{sec:uq}
+
+In Hockin-Mann's model, there are $16$ reaction rates (shown in
+Table \ref{reactrate}) that are derived through fitting
+computational results to empirical data.  In order to investigate
+the uncertainties associated with these $16$ reaction rates and
+depict their impacts on model predictions, the sparse grid
+probabilistic collocation method (SGPCM) \cite{DBJSH, LinAMTAWR,
+LinAMTJSC} is utilized to generate the collocation points on the
+feasible parameter space of these $16$ reaction rates, which are
+assumed to be random inputs with multivariate uniform distribution.
+\subsubsection*{Sensitivity analysis of 16 data-fitted  reaction rates}
+\label{sa}
+% In general, it is computationally intensive to perform stochastic
+%simulations with all inputs treated as random variables. Therefore,
+%it is crucial to examine the output due to random inputs, and to
+%rank inputs accordingly.
+In this subsection, we apply two different stochastic sensitivity
+analysis methods, Morris method ~\cite{Morris91} based on Monte
+Carlo (MC) simulation and sparse grid collocation based on SGPCM
+approach, to rank the importance of the reaction rates on the total
+thrombin and study how the variation (uncertainty) in the total
+thrombin can be attributed to variations in the reaction rates as
+the inputs, i.e., systematically changing reaction rates in the
+model to determine the effects of such changes on the total thrombin
+concentration.
+
+In applied statistics, the Morris method~\cite{Morris91} for global
+sensitivity analysis is very efficient compared to other methods. We
+used the ``Morris one at a time" (MOAT) module based on MC
+simulation performed by PSUADE \cite{PSUADE}, which is a software
+toolkit to facilitate the uncertainty analysis and design
+exploration. Figure \ref{Fig:mmean} and Figure \ref{Fig:std} show
+that the reaction rates $k_{14},k_{15}$ and $k_{11}$ have more
+significant impact on the total thrombin synthesis compared with
+other fitted reaction rates. This result is consistent with the
+current understanding of coagulation cascade.
+ $k_{14}$ is the rate to form complex TF=VIIa=IX
+using TF=VIIa and IX. TF=VIIa=IX is subsequently disassociated to
+TF=VIIa and IXa with rate $k_{15}$. Moreover, $k_{11}$ can control
+the production of TF=VIIa and Xa from TF=VIIa=Xa. The formation of
+the extrinsic factor Xa plays a key role in the total thrombin
+production, since prothrombinase  catalyzes the conversion of
+zymogen prothrombin to thrombin.
+
+Next, we used sparse grid probabilistic collocation
+methods~\cite{DBJSH, LinAMTAWR, LinAMTJSC}, which can also result in
+sensitivity information, to rank sensitivities of these reaction
+rates and compare the results with that obtained by the Morris
+method~\cite{Morris91}. Total variance of reaction rates on
+catalyzing thrombin was decomposed using analysis of variance
+(ANOVA) technique as
+\[v_{total}~=~\sum v_i ~+~\sum v_{ij}~+~\sum v_{ijk}~+~\cdots,\]
+where $v_i$ is the variance of reaction rate $i$, $v_{ij}$ is the
+covariance of rates $i$ and $j$, and $v_{ijk}$ is the covariance of
+rates $i$, $j$ and $k$, etc.
+
+This variance decomposition indicates the amount of information each
+reaction rate ($v_i$) contributes to the total thrombin production
+and determines how much of the variance of each reaction rate can be
+explained by the other reaction rates ($v_{ij}$). We use a network
+graph to present ranks of the importance of each reaction rate with
+respect to the total thrombin and also illustrate the interactions
+between 16 data-fitted reaction rates. See
+ Figure \ref{fig:NSA1} in which the radius of disks
+corresponding to reaction rate $i$ is proportional to
+$v_i/v_{total}$, representing the normalized variance associated
+with reaction rate $i$. The lines between any pair of reaction rates
+$i$ and $j$ is proportional to $v_{ij}/v_{total}$, representing the
+correlation between that pair. The thicker the line is, the larger
+the correlation is. Figure \ref{fig:NSA1} also helps us to avoid the
+mistake of ignoring reactions which have small variances associated
+with themselves, but large correlation with other reactions. It is
+obvious that $k_{14}$ and $k_{15}$ play  major roles in generating
+thrombin. We note that only two-way interactions are shown in Figure
+\ref{fig:NSA1}, but higher order interactions can also be displayed
+using the same approach. We also note that, when the output is
+switched, the sensitivity is also switched. We applied variance
+decomposition and plotted the sensitivity analysis in Figure
+\ref{fig:NSA} when output changed to IXa=VIIIa and IXa=ATIII. Figure
+\ref{fig:NSA} shows that $k_4$ and $k_{14}$ play important roles in
+generating IXa=VIIIa ($x_{33}$) and IXa=ATIII ($x_{30}$)
+respectively.
+
+%Morris design~\cite{Morris91} based on MC simulations is also
+%performed on sensitivity analysis of 16 data-fitted reaction rates.
+%The standard deviations in Figure \ref{Fig:mmean} and Figure
+%\ref{Fig:std} show that $k_{14}$ is the most important reaction rate
+%in generating the total thrombin,
+
+We conclude that the results obtained by the Morris design based on
+the MC simulations are consistent with the results based on SGPCM
+(Figure \ref{fig:NSA1}). Both of them show that the variances of
+$k_{14}$, $k_{15}$ and $k_{11}$ are larger, and that they are
+dominant reaction rates in generating the total thrombin.
+
+\subsubsection*{Sensitivity analysis of initial conditions}
+\label{sec:sens_init} From pervious study, we showed that initial
+concentrations of factors also contribute to steady states of the
+blood coagulation model. %Although effect of tissue factor on total
+%thrombin synthesize is studied in\cite{LoDen05}, effects of the
+%other factors are rarely studied. The reaction rates are used the
+%data fitting value in \cite{HocJon02}.
+Here we performed sensitivity analysis of $10$ non-zero initial
+concentrations of zymogen factors using SGPCM. These non-zero
+initial concentrations of zymogen factors are assumed to vary in
+80\%-120\% of their normal values, and follow a uniformly
+distribution. The effects of initial conditions on the total
+thrombin synthesis is shown in Figure \ref{Fig:nsaic}. Factor X
+($x_{15}$) plays an important role in generating total thrombin and
+its cofactor Xa interacts with TFPI ($x_{18}$), which inhibits the
+thrombin production. Blood coagulation simulation is dependent on
+various model components such as reaction rates, and initial
+concentrations. Sensitivity analysis of these reaction components
+can give a guidance to experimental variability in increasing and
+decreasing thrombin production.
+
+%Moreover, MC or SGPCM allows prediction of individual clotting
+%scenarios as well as the standard deviation. The time marching
+%method produces a single result, representing experimental averages.
+
+
+\subsubsection*{Validation of uncertainty quantification method}
+The SGPCM approach can achieve much faster convergence than a
+classic MC method and it handles a larger number of uncertain
+parameters with relatively lower computational cost, when comparing
+sparse grids with full tensor products \cite{LinAMTAWR}. Here we
+utilized the MC simulations to verify accuracy of the SGPCM
+approach, which we employed to do uncertainty quantification. In
+Figure \ref{Fig:comp}, we plotted the difference of the mean and
+variance of the total thrombin obtained by SGPCM ($545$ points) and
+MC ($1000$ points). The results (mean and variance of the total
+thrombin) obtained by the SGPCM approach is consistent with that of
+MC simulations. But the SGPCM is more efficient, and achieves faster
+convergence than MC. We used three different levels of sparse grid
+points ($184$ points, $1228$ points and $6430$ points) associated
+with $16$ data-fitted reaction rates and treated the mean and
+variance of $6430$ points as the ``real solution". The absolute
+errors of the mean and variance for $34$ variables are shown in
+Table \ref{conv} (Appendix E) which verifies the convergence of the
+SGPCM approach.
+
+
+
+\subsubsection*{Propagation of uncertainty of reaction rates}
+\label{sec:uq}
+
+Propagation of uncertainty of reaction rates in model solutions is
+studied in this section by using initial conditions described in
+\cite{HocJon02}.  The $16$ data-fitted reaction rates are input
+variables and steady state concentrations of different factors are
+output variables. Runge-Kutta method is used to compute the time
+marching system on the sampling space of input variables.
+Figure~\ref{Fig:steady} shows the mean and error bars of steady
+state solutions whose magnitudes are greater than $10^{-10}$ $\mu$m.
+Error bars show how the data are spread and encompass the lowest and
+highest values by using formula $\hbox{\emph{mean}} ~\pm~
+\hbox{\emph{standard deviation (SD)}}$, where \emph{SD} is the
+average or typical difference between the data points and their
+mean. It is obvious that the steady state solutions we found %in
+%section \ref{sec:res}
+are lying inside the intervals of Figure~\ref{Fig:steady}. The
+results of the mean and error bar for time marching simulations of
+undiluted whole blood triggered with 25 pM TF has been shown in
+Figure \ref{Fig:mean}. Since it shows that thrombin production and
+consumption reach equilibrium by $700$ seconds in Hockin-Mann's
+model, we studied the simulation over $700$ seconds in time. Total
+thrombin is defined as thrombin (IIa) and meizothrombin (mIIa) with
+meizothrombin multiplied by a factor $1.2$ because of
+meizothrombin's $20$\% greater activity toward substrates
+\cite{HocJon02}. Figure \ref{Fig:mean} plots the mean and error bar
+of the total thrombin with total $545$ sparse grid points for $16$
+data-fitted reaction rates.  This prediction confidence interval of
+total thrombin production is provided with the model as the
+quantification of the uncertainty.
+
+
+\subsection*{Prediction of hemophilia therapy targeting factors VIII \& IX}
+The sensitivity analysis provides threshold values for individual
+factors or reaction rate constants in controlling thrombin
+production. One application of our study is to examine women who are
+carriers of hemophilia diseases. Hemophilia is a group of hereditary genetic
+disorders that impair the body's ability to control blood clotting
+or coagulation, which is used to stop bleeding when a blood vessel
+is broken. There are two types of hemophilia diseases: one is factor
+VIII deficiency; and the other one is factor IX deficiency. These
+carriers contain a normal and defective gene for factor VIII or
+factor IX, and can present with a wide range of factor VIII or
+factor IX concentration levels in blood; as wide as 0-20\% of 
+ concentrations in the blood of healthy individuals respectively. By knowing the threshold concentration
+of factor VIII or factor IX given the concentration levels of other
+factors, one can predict the level of thrombin production in case of
+bleeding, and subsequently determine if a carrier is at risk of
+bleeding disorder using our approach.
+
+In this section, we show how factors VIII and IX quantitatively
+control the total thrombin concentration to identify individuals at
+risk of bleeding disorder for hemophiliac patients. We assume that
+the amounts of factors VIII and IX vary in ranges of 0-20\% of their
+normal values. We also assume that the threshold of the total
+thrombin is 10\% of its normal value. Below this level, people would
+have bleeding disorder. Other factors are assumed to be at their
+normal levels of concentration. We use uniformly distributed
+sampling points on factors VIII and IX, each factor having 100
+points. The total thrombin is computed at each pair of sample points
+of factors VIII and IX by solving the time dependent system (see
+Appendix B). The total thrombin is compared to the assumed threshold
+value of total thrombin. Figure \ref{Fig:F89} shows that the
+threshold concentration of factor VIII is 4.7 \% of its normal
+value, and that the threshold is increased when the concentration of
+factor IX increases. The histogram in Figure \ref{Fig:F89hist} shows
+the probability of the total thrombin above the threshold is 75.4\%
+when factor VIII and factor IX vary. In this case, the risk of
+bleeding disorder is high (24.6\%). The threshold of factor VIII is
+4.7\% of the normal value.
+
+
+
+Furthermore, this analysis also identifies other factors that might
+lower the threshold concentration of factor VIII so that above
+threshold level of thrombin is produced to prevent from bleeding
+disorder. Based on the sensitivity analysis, we noticed that the
+threshold concentration of factor VIII would be lowered by
+increasing concentrations of the pro-coagulant factors that lead to
+produce total thrombin. Figures \ref{fig:NSA1} and \ref{Fig:nsaic}
+show that the total thrombin concentration is activated by raising
+the value of reaction rate $k_{14}$ and the initial concentration of
+factor X ($x_{15}$). Figure \ref{Fig:RV} shows that the total
+thrombin production is increased from $0.145$ to $0.17$ as $k_{14}$
+increases by 10\% of the normal value. Increasing the value of
+reaction rate $k_{14}$ is to activate factor IX to its active form
+IXa. This study is consistent with the study of the local measures
+\cite{HM}, which are used with a pre-operative dose of raising the
+concentration level of factor IXa. In \cite{HM}, factor IXa is
+increased 10\% by using local measures of tranexamic acid solution,
+and excellent haemostasis is achieved for severe hemophiliac
+patients. In order to lower the threshold value of factor VIII in
+Figure \ref{Fig:F89}, we let the rate of $k_{14}$ and the initial
+concentration of factor X ($x_{15}$) vary in the range of 100-200\%
+of their normal values. We again take 100 uniformly distributed
+sampling points in each of their parameter value spaces. The total
+thrombin is computed on the factor VIII and IX sampling space by
+time marching method. Figure \ref{Fig:F89m} shows that the threshold
+of factor VIII is decreased to 3.3\% by raising the value of
+reaction rate $k_{14}$ and the initial concentration of factor X.
+Figure \ref{Fig:F89mhist} shows the probability of bleeding disorder
+is also decreased to 17.7\%. Thus it is possible by altering the
+activity the level of reaction rate $k_{14}$, and the initial
+concentration of factor X, one could reduce the level required of
+factor VIII to maintain normal hemostasis. Moreover, Factor IX is an
+important drug of haemostasis (see Table \ref{tab:trial} for a
+sampling of current trials involving factor IX). Most trials involve
+the important factor IX. The lack of factor IX can produce bleeding
+episodes that cause damage of the bone, muscles, joints, and
+tissues. Control mechanisms involving factor IXa are common
+strategies in current anticoagulation conical therapies and clinical
+trials \cite{LZV}.

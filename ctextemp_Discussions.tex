@@ -1,0 +1,145 @@
+\def\CTeXPreproc{Created by ctex v0.2.11, don't edit!}\section*{Discussion}
+\label{sec:conc} This paper presents a general mathematical and
+computational framework which could also be used to identify effective drug therapy and
+predict its performance with confidence interval (Figure
+\ref{fig:Dia}).  First, an algorithm is developed to solve the
+steady state system with rank-deficiency derived from a mathematical
+model and establish a quantitative understanding of effects of
+ reaction rates and initial conditions on the outputs of the model. This algorithm  is the first one we are aware
+of that utilizes methods of numerical algebraic geometry to solve
+rank deficient systems. It can be used to analyze other dynamic
+systems with rank-deficiency. Moreover, our results show that the
+steady states depend not only on initial conditions but also on
+reaction rates. This algorithm enables us to find all solutions,
+among which the time marching method would not be able to solve the
+dynamical system with multiple equilibriums for given initial
+condition.
+
+Second, we have developed a new technique to quickly solve
+the steady state system, as well as analyze the chemical reaction
+model using sensitivity analysis and uncertainty quantification methods. 
+Finally, effective drug therapy
+is identified by comparing the importance ranking of the
+corresponding reaction rates obtained through sensitivity analysis
+study. We employ the numerical model to predict the performance of
+the most effective drug therapy with confidence interval of
+corresponding thrombin production using SGPCM. Further analysis will
+be required to assess the effects of all parameters, such as
+reaction rates, using compressive sensing and optimization under
+uncertainty. Optimal control on the parameters for manipulating the
+total thrombin will be derived in our future works.
+
+%Hockin-Mann's model that describes the tissue
+%factor mediated pathway of blood coagulation was used to demonstrate the effectiveness %of the framework. A new algorithm based
+%on numerical algebraic geometry is proposed to compute the steady
+%state system with rank-deficiency and is applied to the
+%Hockin-Mann's model.
+
+For Hockin-Mann's model,   we explored the
+effects of $16$ reaction rates whose values are obtained by fitting
+data and initial conditions. Both variance decomposition based
+sensitivity analysis and Morris design method were performed to rank
+the significance of the $16$ uncertain reaction rates with respect
+to the total thrombin. Ranks of the importance of each reaction rate
+with respect to total thrombin concentration and the interactions
+between pair reactions are illustrated using a network graph (See
+Figure \ref{fig:NSA}). Good agreement on the sensitivity ranking of
+the reaction rates is observed using both methods. SGPCM is employed
+to study the effect of the $16$ uncertain reaction rates on the
+total thrombin concentration. The numerical results are consistent
+with the results obtained from classic Monte Carlo simulations.
+Additionally, the numerical results indicate that SGPCM can achieve
+much faster convergence than classic Monte Carlo method with much
+lower computational cost. (Figure 7)
+\\
+Computational studies support the following three main conclusions:
+\begin{itemize}
+\item  the steady states depend on the initial concentrations of
+factors and chemical reaction rates;
+\item  our methods compute all steady states, which couldn't be founded by time marching method;
+\item  among $16$ fitted rate constants, the reaction rate $k_{14}$ plays an important role in generating the total
+thrombin;
+\item  the threshold concentration of factor VIII is controlled by
+$k_{14}$ and factor X. This provides clinical guidance for the
+examination of bleeding disorder.
+\end{itemize}
+
+All ``important" reaction rates, factors are listed in Box 2.
+
+\begin{algorithm}[H]
+\SetAlgoLined
+ \SetAlgorithmName{Algorithm}{problem}{List of problems}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output} %\LinesNumbered
+{\bf Box 2} Important reaction rates and factors
+\begin{itemize}
+\item {\bf $k_{14}$ and $k_{15}$}: are the most important reaction rates in
+generating IXa=VIIIa and IXa=ATIII respectively, eventually play
+important roles in generating the total thrombin;
+\item {\bf factors VIII and IX}: deficiency causes two types of hemophilia
+diseases;
+\item {\bf $k_{14}$ and factor X}: control the threshold of factor
+VIII, and reduce the risk of bleeding disorder.
+\end{itemize}
+\end{algorithm}
+
+
+Although previous studies showed that experimental coagulation
+initiation at different levels of TF effects the total thrombin
+production. Our analysis investigates how altering both the initial
+concentrations of pro-coagulant factors and values of reaction rate
+constants can effect thrombin production, and shows that $k_{14}$
+and $k_{15}$ play a major role in generating the total thrombin
+since they directly control generation of the complex TF=VIIa=IX and
+thereafter control the generation of factor IXa. On the other hand,
+rates $k_{37}$ and $k_9$, which consume TF=VIIa complex and factor
+X, prevent the total thrombin production. Moreover, $k_{4}$
+activates, and $k_{37}$ inhibits the role of $k_{14}$. In fact,
+larger values of $k_4$ yield more generation of TF=VIIa, which
+speeds up the thrombin production, and then activates the role of
+$k_{14}$. While $k_{37}$ inhibits the thrombin production by
+consuming TF=VIIa to generate the complex TF=VIIa=Xa=TFPI, and then
+gives negative feedback to $k_{14}$. Furthermore, blocking $k_{14}$
+and $k_{15}$ results in significant sensitivity shifts. Figure
+\ref{Fig:NSAD} shows that their affinities are predicted to be less
+important when values of $k_{14}$ and $k_{15}$ are reduced to 10\%
+of their normal values. Conversely, the sensitivity of $k_{23}$
+related with factor VIIIa is found to increase.
+ Our analysis also shows that the factor VIII plays an
+important role in the examination of bleeding disorder for women who
+are hemophilia carriers, and can vary within a wide range, namely,
+20-80\% of the normal value. Analysis of the threshold concentration
+of factor VIII can be used to predict if a carrier is at high risk
+of bleeding disorder. The threshold level for this particular factor
+in a patient would depend upon the activity rate and the
+concentration of all coagulation factors. The current common
+practice for hemophilia treatment is to replace the missing factor
+with exogenous material. If it is a human derived factor VIII, this
+carries the risk of spreading disease (as in the case of HIV and the
+high number of hemophiliacs who developed AIDS). One could provide
+recombinant proteins, but these are very expensive. Also recombinant
+proteins can induce the patient to generate an immune response to
+the foreign proteins and block their effectiveness. Thus,
+identifying the threshold value of factor VIII enables the use of
+small molecule inhibitors which are less likely to be immunogenic
+and should be cheaper than production of recombinant proteins. The
+sensitivity analysis could provide important clinical information to
+direct therapy for bleeding and thrombotic disorders.
+
+Furthermore, the sensitivity analysis can identify new targets for
+hemorrhagic disorders. One approach to treat coagulation factor
+deficiencies is to replace the missing factor with exogenous
+material. Prophylactic use of exogenous material to prevent disease
+is very expensive and exogenous material is often just provided
+during the bleeding episodes but not for prophylactic purpose.
+Furthermore, the exogenous material may induce an immune response
+antagonizing the effect of replacement therapy. Sensitivity analysis
+may help identify other elements of the coagulation network where
+changes in activities may reduce the threshold concentration of the
+missing factors. Thus small molecule inhibitors or activators of the
+other elements (which are less likely to induce an immune response)
+can reduce the effects of the factor deficiency. This potentially
+may provide new therapeutic targets to treat coagulation
+deficiencies, and it also may be possible to individualize the
+treatment for a specific patients based upon their level of
+coagulation components based on the guidance of the sensitivity
+analysis.

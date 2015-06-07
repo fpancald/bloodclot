@@ -1,0 +1,328 @@
+\section*{Methods}
+\label{sec:method}
+\subsection*{Overview of methods}
+Over the last decade, numerical algebraic geometry (see \cite{Li}
+and \cite{SW} for a review), which grew out of continuation methods
+for finding all isolated solutions of systems of nonlinear
+multivariate polynomials, became efficient and was applied to
+variety of problems. To approximate all isolated solutions of
+polynomial systems, numerical path following techniques have been
+proven reliable and efficient during the past two decades. In the
+90's, homotopy methods were developed to exploit special structures
+of the polynomial system, in particular its sparsity. In numerical
+algebraic geometry, we apply and integrate homotopy continuation
+methods to describe solution components of polynomial systems.
+Moreover, we have been successful in the past in dealing with these
+types of problems, zebrafish model \cite{HHHLSZ}, necrotic core
+tumor growth model \cite{HHHLSZ2} and three dimensional tumor growth
+model \cite{HHHS}. In \cite{HHHLSZ2}, we found multiple steady state
+solutions of the zebrafish model, which is hard to accomplish using
+classical numerical PDE algorithms. We applied homotopy continuation
+to free boundary problems discussed in \cite{HHHLSZ2, HHHS},  and
+showed the efficiency of our algorithms. These studies provide the
+benefits of numerical algebraic geometry in studying nonlinear
+systems. All the computations are based on Bertini \cite{Bertini},
+which is a software package in the field of numerical algebraic
+geometry that numerically compute all solutions of polynomial
+systems over $\mathbb{C}^n$. However, Bertini cannot be directly
+applied to a ``deficient steady state system", which is defined as
+if some equations of a system can be expressed by a linear
+combination of other equations in this system. In other words, the
+Jacobian associated with the system is rank deficient at any given
+point. If the deficient system is also the steady state system
+derived from a differential equations system, then we call it as a
+``deficient steady state system".
+
+There is rich literature on methods to study biochemical reaction
+networks, such as reaction network structures \cite{CF},
+Michaelis-Menten kinetics, linear kinetics and the rational
+parameterizations \cite{TG}.  Specifically, \cite{LZV} studies the
+fragility and robustness of the model and discusses the
+computationally derived points, correlation between the model
+simulation and experimental data, and computation of the Overall
+State Sensitivity Coefficients (OSSCs); \cite{CF} discusses the
+relationship between reaction network structure and the possibility
+of multiple equilibria based on computer algebra software; \cite{TG}
+uses a parameterization and transfers steady state system into a $L$
+algebraic equation. One common difficulty encountered by these
+methods is to deal with
+rank-deficient systems. To overcome this difficulty, we propose a new algorithm %(see section
+%\ref{sec:steady})
+, which can compute the steady states for rank-deficient systems and
+analyze stability of the solutions. Our results cannot be derived
+from any existing mathematical theories of biochemical reaction
+networks. The steady state solutions depend upon the initial
+condition and reaction rates. In Hockin-Mann's coagulation model, 16
+reaction rate constants are obtained by data-fitting. Uncertainties
+associated with the TF pathway of blood coagulation due to
+uncertainty associated with  these reaction rate constants remain
+unknown. We explore the significance of these data-fitted reaction
+rates by using uncertainty quantification and sensitivity analysis.
+
+Sensitivity analysis is a powerful tool in ranking the importance of
+the random inputs and quantifying their interactions. The
+sensitivity approach in~\cite{Rabitz83} uses a few sample points in
+a large parameter domain to rank the random inputs, which is a
+computationally efficient technique for a linear model. However,
+when the system has strong nonlinearities, more sample points
+covering the whole parameter domain have to be used. In sensitivity
+analysis, a common approach is changing One-At-a-Time (OAT), to see
+what effect this produces on the output. Sensitivity methods that
+use OAT design are sensitive approaches were the impact of changing
+the values of each factor is evaluated in turn. Randomly moved OAT
+as inputs is the most used screening method in sensitivity analysis.
+Many screening methods have been developed, e.g., Morris's
+method~\cite{Morris91, Campolongo05, Saltelli00}, Cotter's
+method~\cite{Cotter79}, Andres' iterated fractional factorial
+method~\cite{Andres93}, Bettonvil's sequential
+bifurcation~\cite{Bettonvil90}, and variance-based sensitivity
+analysis~\cite{Saltelli00}. By using a sensitivity analysis
+framework to explore in the space of reaction rate parameters, we
+study the output statistics to understand  how input uncertainties
+propagate through the Hockin-Mann's coagulation model and how Mann's
+model responds to variation in values of these simulation fitted
+reaction rates. The Morris method is utilized to show effects of
+reaction rates on generating the total thrombin. The total variance
+of total thrombin is decomposed by using Analysis Of Variance
+technique (ANOVA). We remark that the sensitivity analysis performed
+in the present paper can be extended to inverse modeling to
+calibrate model parameters to improve simulations. The relationships
+between the output responses and input parameters (response curves
+or surfaces) can also be used to develop reduced-order models for
+the subset of processes, which can then be used to perform more
+extensive uncertainty quantification of the complete model. Recently
+the probabilistic collocation method (PCM) has been applied for
+sensitivity analysis and can efficiently identify the sensitive
+parameters\cite{Reagan-2003-combustion,Reagan-2005-JCK}. In
+\cite{lin}, the Multi-Element-PCM based sensitivity analysis method
+is developed, which is efficient and can achieve fast convergence
+compared to standard Monte Carlo (MC) based sensitivity analysis
+methods for cases with $20$-$100$ random parameters. Moreover, PCM
+can be also used to speedup the convergence for uncertainty
+quantification introduced by Tatang and McRae \cite{tatang}.
+Recently Xiu and Hesthaven \cite{DBJSH} have used Lagrange
+polynomial interpolation to construct high-order stochastic
+collocation methods. The properties of PCM were extensively studied
+in the past $10$ years. In \cite{NOVAK96,NOVAK99,Barthelmann2000},
+the errors of integrating or interpolating functions with Sobolev
+regularity were analyzed for Smolyak constructions based on
+one-dimensional nested Clenshaw-Curtis rules. In \cite{NOVAK99}, the
+degree of exactness of the Smolyak quadrature using Clenshaw-Curtis
+and Gaussian one-dimensional rules was investigated. In
+\cite{DBJSH}, the efficiency of Clenshaw-Curtis-based sparse grid
+stochastic collocation was demonstrated in comparison to other
+stochastic methods on an elliptic problem. In 2003, Gerstner and
+Griebel~\cite{Gerstner03} introduced the dimension-adaptive tensor
+product quadrature method. In \cite{Ganapathysubramanian07}, sparse
+grid collocation schemes were applied to solving stochastic natural
+convection problems. In \cite{Griebel98,xmazabaras08}, an adaptive
+hierarchical sparse grid collocation algorithm has been developed.
+In this study, we apply the Sparse Grid Probabilistic Collocation
+Method (SGPCM) to study the uncertainty quantification process of
+Mann's model in a faster convergence rate. We validate our method by
+comparing results obtained by SGPCM and MC.
+
+\subsection*{Sparse grid probabilistic collocation method}
+
+In this paper, we applied the uncertainty quantification method -
+SGPCM to achieve faster convergence in the uncertainty
+quantification process, compared with the classic MC simulations.
+The general procedure of the PCM approach is similar to that of the
+MC method except that different sampling points and corresponding
+weights are selected. The procedure of the PCM consists of the
+following of three main steps:
+\begin{enumerate}
+  \item Generate $N_c$ collocation points in probability space of
+random parameters as independent random inputs based on a quadrature
+formula;
+  \item Solve a deterministic problem at each collocation point;
+  \item Estimate the solution statistics using the
+corresponding quadrature rule,
+%
+\begin{align}\label{eq:statis}
+\langle u(\boldsymbol{x},t)\rangle&=\int_\Gamma
+u(\boldsymbol{x},t,\xi)\rho(\xi)d\xi \approx
+\sum_{k=1}^{N_c}{u(\boldsymbol{x},t,\xi_k)w_k},
+\\ \sigma(u)(\boldsymbol{x},t)&=\sqrt{\int_\Gamma
+(u(\boldsymbol{x},t,\xi)-\langle u\rangle)^2 \rho(\xi)d\xi} \approx
+\sqrt{\sum_{k=1}^{N_c}{u^2(\boldsymbol{x},t,\xi_k)w_k}-\langle
+u\rangle^2},
+\end{align}
+%
+\end{enumerate}
+where $\rho(\xi)$ is the probability density function (PDF) of the
+random variable $\xi$, $N_c$ is the number of quadrature points,
+$\{\xi_k\}$ is the set of quadrature points, and $\{w_k\}$ is the
+corresponding set of weights, which is the combination of quadrature
+weights in each random dimension. In the second step of the PCM, as
+for the MC method, any existing code can be used. Extensive reviews
+on the construction of quadrature formulas may be found in
+\cite{Cools93, Cools99}. The Smolyak formula \cite{SMOLYAK63} is
+used to construct the collocation point set, which is a linear
+combination of tensor product formulas and the resulting point set
+has a significantly smaller number of points than the full tensor
+product set. Recently, Lagrange polynomial interpolation has been
+used \cite{DBJSH, LinAMTAWR, LinAMTJSC} to construct high order
+stochastic collocation methods based on sparse grids using the
+Smolyak formula \cite{SMOLYAK63}. Such sparse grids do not depend as
+strong on the dimensionality of the random space as those more
+suitable for applications with high-dimensional random inputs.
+Detailed descriptions on building the collocation point set can be
+found in \cite{DBJSH, LinAMTAWR, LinAMTJSC}.
+
+\subsection*{Global sensitivity analysis based on Polynomial Chaos Expansion (PCE)}
+Global sensitivity analysis can be obtained from PCEs in order to
+identify the dominant sources of uncertain parameters and their
+attributions. Generally, PCEs of a second-order stochastic processes
+with $d$ number of independent random variables can be expressed as
+\[g(x_1, \cdots, x_d ) = \Sigma_{k=0}^{K-1} c_k \Psi_k
+(\mathbf{x}),\]where $\mathbf{x} = (x_1, \cdots,x_d)$ is a set of
+independent random variables, $\Psi_k (\mathbf{x})$ are
+multidimensional orthogonal polynomials with regard to the inner
+product, and $c_k$ are the deterministic polynomial chaos
+coefficients of $g$. Then the global sensitivity analysis based on
+variance decomposition is employed. Here the total variance is
+defined as \[Var[g(\mathbf{x})] = \Sigma_{k>0} c_k^2 \|\Psi_k
+(\mathbf{x})\|^2, \] where $\|\Psi_k(\mathbf{x})\|$ can be
+pre-computed, and $c_k$ is calculated using the sparse grid
+probabilistic collocation method and the orthogonal property of
+polynomial chaos. Then the first-order (or main) effect sensitivity
+indices of $S_i$ are
+\[S_i ~=~
+\frac{Var[\mathbb{E}\big(g(\mathbf{x}|x_i)\big)]}{
+Var[g(\mathbf{x})]}~=~\frac{\Sigma_{k\in\mathbb{I}_i}~ c_k^2
+\|\Psi_k (\mathbf{x})\|^2}{\Sigma_{k>0} ~c_k^2 \|\Psi_k
+(\mathbf{x})\|^2},\] where $\mathbb{I}_i$ is the set of bases with
+only $x_i$ involved. $S_i$ is the uncertainty contribution that is
+due to i-th parameter only. Similarly, the joint sensitivity indices can
+be written as
+\[S_{ij} ~=~
+\frac{Var[\mathbb{E}\big(g(\mathbf{x}|x_i,x_j)\big)]}{
+Var[g(\mathbf{x})]}-S_i-S_j~=~\frac{\Sigma_{k\in\mathbb{I}_{ij}}~
+c_k^2 \|\Psi_k (\mathbf{x})\|^2}{\Sigma_{k>0} ~c_k^2 \|\Psi_k
+(\mathbf{x})\|^2},\] where $\mathbb{I}_{ij}$ is the set of bases
+with only $x_i$ and $x_j$ involved. $S_{ij}$ is the uncertainty
+contribution that is due to $(i,j)$ parameter pair.
+
+\subsection*{Method for solving rank-deficient polynomial system}
+\label{sec:steady}
+
+We develop a numerical algorithm for studying the steady state
+system derived from the tissue factor-mediated coagulation pathway
+model introduced in \cite{HocJon02} in this section. The coagulation
+cascade formulated in \cite{HocJon02} is listed in Table~\ref{taba}
+of Appendix A for the self-completeness of the paper. From this
+coagulation cascade, we get a mathematical model consisting of $34$
+ordinary differential equations (see Appendix B) with $42$ rate
+constants which describe $27$ independent equilibrium expressions
+listed in Table~\ref{taba}. Table \ref{tabb} of Appendix A lists the
+notations to represent species in Table~\ref{taba} used by ODEs in
+Appendix B. The corresponding steady state system, which is obtained
+by setting $t$-derivatives to be $0$ for the ODE system, is a
+polynomial system with $34$ variables. Unfortunately, this system
+cannot be solved directly by polynomial solvers such as Bertini
+\cite{Bertini} because of its rank-deficiency.
+%
+In order to deal with the rank-deficiency, let us start with
+considering the rank of the polynomial system. From \cite{SW}, the
+rank of a polynomial system equals to that of the Jacobian
+associated with the system at any random generic point. For our
+model, the rank of the steady state system is $24$, which suggests
+that the system is not of full rank. An additional $10$ linearly
+independent equations need to be added to the system in order to
+generate an augmented polynomial system.
+%
+Here we introduce an idea of symbolic computation to determine these
+additional linear equations. Let $C(\mathbf{x},\mathbf{k})$ denote
+monomial components of the steady state polynomial system, i.e., the
+multiplication of the rate constants and reactants, \bes
+C(\mathbf{x},\mathbf{k})&=&\Big(k_{2} x_{1} x_{2},k_{1} x_{3}, k_{4}
+x_{1} x_{4}, k_{3} x_{5}, k_{5} x_{5} x_{2}, k_{6} x_{6} x_{2},
+k_{7} x_{7} x_{2}, k_{9} x_{5} x_{8}, k_{8} x_{9}, k_{12} x_{5}
+x_{6}, k_{11} x_{10},
+k_{14} x_{5} x_{11},\nnu\\
+&\ & k_{13} x_{12}, k_{16} x_{6} x_{14}, k_{17} x_{7} x_{15}, k_{19}
+x_{16} x_{13}, k_{18} x_{17}, k_{21} x_{17} x_{8}, k_{20} x_{18},
+k_{24} x_{16}, k_{23} x_{19} x_{20}, k_{25} x_{18}, k_{25}
+x_{17},\nnu\\&\ & k_{26} x_{7} x_{21}, k_{28} x_{6} x_{22}, k_{27}
+x_{23}, k_{30} x_{23} x_{14}, k_{29} x_{24}, k_{32} x_{25} x_{23},
+k_{34} x_{6} x_{26}, k_{33} x_{27}, k_{36} x_{10} x_{26}, k_{35}
+x_{28},\nnu\\ &\ & k_{37} x_{5} x_{27}, k_{38} x_{6} x_{29}, k_{39}
+x_{25} x_{29}, k_{40} x_{13} x_{29},k_{41} x_{7} x_{29},k_{42} x_{5}
+x_{29}, k_{10} x_{9}, k_{15} x_{12}, k_{22} x_{18}, k_{31}
+x_{24}\Big)^T\nnu,\ees then the steady state polynomial system
+$f(\mathbf{x})$ can be expressed as
+\[f(\mathbf{x})=A\times C(\mathbf{x},\mathbf{k}),\] where $A$ is a real valued matrix. Obviously, the rank of $A$
+is the same as the rank of the system $f(\mathbf{x})$. Since
+$rank(A)=24$, there exists $24$ linearly independent rows of $A$  so
+that the other $10$ rows of $A$ can be represented by them ( see
+Appendix C). Moreover, each row of $A$, say $i$-th row $A(i,:)$, is
+corresponding to $i$-th equation of $f(\mathbf{x})$ or
+$\frac{dx_i}{dt}$.  For example, we have
+\[A(24,:)=-A(21,:)-A(22,:)-A(23,:),\] which means
+\bes
+&\ &\frac{dx_{24}}{dt}=-\frac{dx_{21}}{dt}-\frac{dx_{22}}{dt}-\frac{dx_{23}}{dt}\nnu\\
+&\Rightarrow& x_{24}+x_{21}+x_{22}+x_{23}=\hbox{Const},\label{2}
+\ees where $\hbox{Const}$ is a constant determined by the initial
+condition.  In this case, we can generate additional linear
+equations by the following algorithm.
+
+\begin{algorithm}[H]
+\SetAlgoLined
+ \SetAlgorithmName{Algorithm}{problem}{List of problems}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output} %\LinesNumbered
+\Input{The coefficient matrix $A_{n\times m}$.}
+\Output{Linear equations generated.} \For{$i=1:n$}{determine if the
+row $A(i,:)$ is linearly independent upon $B$?\\ \eIf{true}{add
+$A(i,:)$ into $B$ and add $i$ into $\mathcal{I}_B$.}{write $A(i,:)$
+as a linear combination of the rows of $B$ and insert the
+coefficients of $B$ into $\mathcal{C}$.\\ add $i$ into
+$\mathcal{I}_\mathcal{C}$.}} \For{$i=1:$ size of
+$\mathcal{I}_\mathcal{C}$}{ print
+$\frac{dx_{{\mathcal{I}_\mathcal{C}}_i}}{dt} =
+\sum_j\mathcal{C}(i,j) \frac{dx_{{\mathcal{I}_\mathcal{B}}_j}}{dt}$}
+\caption{Algorithm for generating linear equations}
+\end{algorithm}
+
+
+For Mann's model, $10$ linear equations can be generated and denoted
+as $L(x_1,x_2,\dots,x_{34})$. Therefore, the augmented polynomial
+system becomes \bes F(x_1,x_2,\dots,x_{34})=\left( {\begin{array}{c}
+   f(x_1,x_2,\dots,x_{34})  \\
+   L(x_1,x_2,\dots,x_{34})  \\
+\end{array}} \right). \label{3}\ees
+Now we switch our attention to the computation of steady state
+solutions to system (\ref{3}). Noticing that there are some simple
+polynomial equations such as $f_{11},f_{18},f_{24}$. We propose the
+following algorithm to simplify and to solve this rank-deficient
+polynomial system (RDPS).
+
+\begin{algorithm}[H]
+\SetAlgoLined
+ \SetAlgorithmName{Algorithm}{problem}{List of problems}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output} %\LinesNumbered
+\Input{A set $f = \{f_1,\dots,f_N\}$ of N polynomials, the linear system $L$.}
+\Output{A set $g = \{f_1,\dots,f_M\}$ of M
+   simplified polynomials. A zero solution set $S=\{x_i|x_i=0\}$.}
+Set $S=\{\emptyset\}$.\\
+Call RDPS$\textunderscore$iterative($f$, $L$, $S$).
+\caption{Algorithm for solving RDPS($f$)}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\SetAlgoLined
+ \SetAlgorithmName{Algorithm}{problem}{List of problems}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output} %\LinesNumbered
+\Input{A polynomial set $f = \{f_1,\dots,f_{N'}\}$, linear system $L$ and solution set $S$}
+\Output{true (success) or false } {\bf Set
+}display$\textunderscore$solution=true\\\If{$S$ does not satisfy $L$
+}{{\bf return} false} \For{$i=1:N'$}{\If{$f_i$ is single
+monomial}{display$\textunderscore$solution=false\\remove $f_i$ from
+$f$, assume $f_i=k_{s_i}x_{i_1}\cdots x_{i_m}$\\\For{$j=1:m$}{add
+$x_{i_j}$ into $S$, evaluate $f$ as $f'$ and $L$ as $L'$\\
+\eIf{RDPS$\textunderscore$iterative($f'$, $L'$, $S$)}{{\bf return}
+true}{remove $x_{i_j}$ from $S$}}}}
+\If{display$\textunderscore$solution}{output $f$ and $S$\\{\bf
+return} true} \caption{RDPS$\textunderscore$iterative($f$, $L$,
+$S$)} {\bf return} false
+\end{algorithm}
